@@ -8,6 +8,15 @@ jobs:
     steps:
       - name: Pull git repo
         uses: actions/checkout@v4
-      - name: say hello R4ins
-        run: echo "R4ins fastAPI CI/CD pipeline"
+      - name: Install python version 3.11.5
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.5"
+      - name: upgrade pip
+        run: python -m pip install --upgrade pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+        
+
+
 
