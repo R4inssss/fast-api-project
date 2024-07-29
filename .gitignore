@@ -1,0 +1,4 @@
+__pycache__
+.env
+venv1/
+/docker-compose-dev.yml
