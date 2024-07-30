@@ -33,7 +33,7 @@ app.include_router(vote.router)
 
 @app.get("/")
 def hello():
-    return {"message": "Volume Bind with tags"}
+    return {"message": "CI/CD Pipeline Deployement Successful"}
 
 
 # ============== Debug Code ==================== #
