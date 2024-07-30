@@ -33,7 +33,7 @@ app.include_router(vote.router)
 
 @app.get("/")
 def hello():
-    return {"message": "CI/CD Pipeline Deployement Successful"}
+    return {"message": "Push to prod succsessful"}
 
 
 # ============== Debug Code ==================== #
