@@ -86,7 +86,7 @@ jobs:
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USERNAME }}
-          password: ${{ secrets.KEY_PAIR }}
+          key: ${{ secrets.KEY_PAIR }}
           port: ${{ secrets.PROD_PORT }}
           script: |
             cd app/src
