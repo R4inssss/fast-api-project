@@ -76,6 +76,10 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.KEY_PAIR }}
 
       - name: Deploy to ubuntu server
         uses: appleboy/ssh-action@v1.0.3
@@ -87,4 +91,4 @@ jobs:
           script: |
             cd app/src
             git pull
-            echo ${{secrets.KEY_PAIR}} | sudo -S systemctl restart api
+            echo ${{secrets.PROD_PASSWORD}} | sudo -S systemctl restart api
