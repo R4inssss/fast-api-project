@@ -2,8 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from . import models
 from .database import engine
-from .routers import post, user, auth, vote
+from .routers import post, user, auth, vote, front
 from .config import settings
+import os
+
 # Debug Code: from .debuglog import Debug_log
 
 
@@ -29,9 +31,10 @@ app.include_router(post.router)
 app.include_router(user.router)
 app.include_router(auth.router)
 app.include_router(vote.router)
+app.include_router(front.router)
 
 
-@app.get("/")
+@app.get("/message")
 def hello():
     return {"message": "Push to prod succsessful"}
 

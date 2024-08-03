@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--Yoinekd from template-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #000000;
+            color: #149109;
+        }
+
+        /* Navbar Styles */
+        header {
+            background: #000000;
+            color: #149109;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #149109;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #555;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .site-title a {
+            color: #149109;
+            text-decoration: none;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .site-title a:hover {
+            background: #555;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://pbs.twimg.com/profile_images/1281234061357391873/a_eRlunA_400x400.jpg') no-repeat center center/cover;
+            color: #149109;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero a {
+            background: #000000;
+            color: #149109;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .hero a:hover {
+            background: #555;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 4rem; /* To offset the fixed navbar */
+        }
+
+        footer {
+            background: #000000;
+            color: #149109;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="/docs">FastAPI Docs</a></li>
+                <li class="site-title"><a href="http://r4ins.xyz" target="_blank">r4ins.xyz | r4ins.me</a></li>
+                <li><a href="https://github.com/R4inssss" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero" id="home">
+        <div>
+            <h1>Welcome to My Portfolio</h1>
+            <p>Student | Breaker | Fixer* | Learner</p>
+            <a href="https://github.com/R4inssss" target="_blank">Visit my GitHub</a>
+        </div>
+    </section>
+    <section>
+        <h2>About Me</h2>
+        <p>HENLO.</p>
+    </section>
+    <footer>
+        <p> Sorry for all the web devs out there, I'm not one.</p>
+    </footer>
+</body>
+</html>
