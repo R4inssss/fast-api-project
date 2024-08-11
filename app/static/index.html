@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--Yoinekd from template-->
+<!--Yoinked from template-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -77,6 +77,11 @@
             border-radius: 5px;
         }
 
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
         /* Hero Section Styles */
         .hero {
             height: 100vh;
@@ -124,15 +129,94 @@
             color: #149109;
             text-align: center;
             padding: 1rem 0;
-            position: fixed;
+            position: relative; /* Change from fixed to relative on mobile */
             width: 100%;
             bottom: 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+            }
+
+            nav ul li a {
+                font-size: 0.875rem;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #000;
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                color: #149109;
+                font-size: 1.5rem;
+                padding: 0.5rem;
+            }
+
+            section {
+                padding: 1rem 0.5rem;
+            }
+
+            .hero {
+                height: 60vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            nav ul li a {
+                padding: 0.25rem 0.5rem;
+            }
+
+            footer {
+                position: relative;
+            }
+
+            header {
+                padding: 0.5rem 0;
+            }
+
+            .hero {
+                height: 50vh;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
+            <div class="menu-toggle">☰</div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="/docs">FastAPI Docs</a></li>
@@ -156,5 +240,14 @@
     <footer>
         <p> Sorry for all the web devs out there, I'm not one.</p>
     </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
