@@ -62,6 +62,37 @@ jobs:
       #     push: true
       #     tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi:latest
 
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: [build]
+  #   environment:
+  #     name: production
+  #   steps:
+  #     - name: Pull git repo
+  #       uses: actions/checkout@v4
+  #     - name: Deploy Heroku
+  #       uses: akhileshns/heroku-deploy@v3.13.15 # This is the action
+  #       with:
+  #         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+  #         heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+  #         heroku_email: ${{secrets.HEROKU_EMAIL}}
+  #     - name: Set up SSH
+  #       uses: webfactory/ssh-agent@v0.9.0
+  #       with:
+  #         ssh-private-key: ${{ secrets.KEY_PAIR }}
+
+  #     - name: Deploy to ubuntu server
+  #       uses: appleboy/ssh-action@v1.0.3
+  #       with:
+  #         host: ${{ secrets.PROD_HOST }}
+  #         username: ${{ secrets.PROD_USERNAME }}
+  #         key: ${{ secrets.KEY_PAIR }}
+  #         port: ${{ secrets.PROD_PORT }}
+  #         script: |
+  #           cd app/src
+  #           git pull
+  #           echo ${{secrets.PROD_PASSWORD}} | sudo -S systemctl restart api
+
   deploy:
     runs-on: ubuntu-latest
     needs: [build]
@@ -70,12 +101,18 @@ jobs:
     steps:
       - name: Pull git repo
         uses: actions/checkout@v4
+
+      - name: Install Heroku CLI
+        run: |
+          curl https://cli-assets.heroku.com/install.sh | sh
+
       - name: Deploy Heroku
-        uses: akhileshns/heroku-deploy@v3.13.15 # This is the action
+        uses: akhileshns/heroku-deploy@v3.13.15
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.9.0
         with:
@@ -91,4 +128,4 @@ jobs:
           script: |
             cd app/src
             git pull
-            echo ${{secrets.PROD_PASSWORD}} | sudo -S systemctl restart api
+            echo ${{ secrets.PROD_PASSWORD }} | sudo -S systemctl restart api
