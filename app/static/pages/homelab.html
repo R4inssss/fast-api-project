@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-toggle">&#9776;</div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li class="site-title"><a href="http://r4ins.xyz" target="_blank">r4ins.xyz</a></li>
+                <li class="site-title"><a href="http://r4ins.me" target="_blank">r4ins.me</a></li>
+                <li><a href="https://github.com/R4inssss" target="_blank">GitHub</a></li>
+                <li><a href="/comp">Competitions</a></li>
+                <li class="dropdown">
+                    <a href="#">Projects</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/homelab">Homelab</a></li>
+                        <li><a href="/docs">fastAPI Social Media Application</a></li>
+                        <li><a href="/prccdc">PRCCDC</a></li>
+                        <li><a href="/detect">Custom IDS</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero" id="home">
+        <div>
+            <h1>Welcome to My Portfolio</h1>
+            <p>Student | Breaker | Fixer* | Learner</p>
+        </div>
+    </section>
+    <section class="project-gallery">
+        <h2>Homelab Setup</h2>
+        <p>Proxmox - Docker - SSH - pfSense - and more</p>
+        <b></b>
+        <div class="image-grid">
+            <img src="/static/imgs/networkdiagram.png" alt="Network Diagram">
+            <img src="/static/imgs/homelab1.png" alt="RAID 0 Array">
+            <img src="/static/imgs/homelab2.png" alt="Homelab Step 2">
+            <img src="/static/imgs/homelab3.png" alt="Homelab Step 3">
+            <img src="/static/imgs/pihole.png" alt="Pi-hole Setup">
+        </div>
+    </section>
+    <footer>
+        <div class="social-icons">
+            <a href="https://github.com/R4inssss" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/peter-bui-n" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://tryhackme.com/p/rainssss" target="_blank" aria-label="TryHackMe">
+                <img src="/static/imgs/thm.png" alt="TryHackMe" style="height: 24px; vertical-align: middle;">
+            </a>
+
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    </script>
+
+</body>
+</html>

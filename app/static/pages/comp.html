@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-toggle">&#9776;</div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li class="site-title"><a href="http://r4ins.xyz" target="_blank">r4ins.xyz</a></li>
+                <li class="site-title"><a href="http://r4ins.me" target="_blank">r4ins.me</a></li>
+                <li><a href="https://github.com/R4inssss" target="_blank">GitHub</a></li>
+                <li><a href="/comp">Competitions</a></li>
+                <li class="dropdown">
+                    <a href="#">Projects</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/homelab">Homelab</a></li>
+                        <li><a href="/docs">fastAPI Social Media Application</a></li>
+                        <li><a href="/prccdc">PRCCDC</a></li>
+                        <li><a href="/detect">Custom IDS</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero" id="competitions">
+        <div>
+            <h1>Cybersecurity Competitions</h1>
+            <p>Competitive highlights and notable performances</p>
+        </div>
+    </section>
+    <section class="competition-highlights">
+        <ul>
+            <li><strong>PRCCDC Regionals 2024-2025:</strong> 4th place (Backup DC - Windows), then 5th place (Primary DC - Windows, Main Developer, Linux Sysadmin)</li>
+            <li><strong>NCL April 2024:</strong> Top 25% individually, Top 10% team. Solely handled enumeration (Top 100).</li>
+            <li><strong>NCL April 2025:</strong> Top 6% team - Contributed 1050/1440 points. Cryptography specialist (38th/4798).</li>
+            <li><strong>NASA Space Apps Hackathon 2024:</strong> “Most Inspirational Award” as Sole Programmer.</li>
+            <li><strong>CyberForce 2024:</strong> DoE Competition - Linux DevOps, Full Stack Developer, and Sysadmin.</li>
+            <li><strong>HackTheBox NW Regionals 2024:</strong> 2nd place. Led enumeration, captured 4 of 5 flags.</li>
+            <li><strong>swampCTF 2025:</strong> Ranked 224/751 globally. Team Zapdos captain - 10 of 11 flags.</li>
+        </ul>
+    </section>
+    
+    <footer>
+        <div class="social-icons">
+            <a href="https://github.com/R4inssss" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/peter-bui-n" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://tryhackme.com/p/rainssss" target="_blank" aria-label="TryHackMe">
+                <img src="/static/imgs/thm.png" alt="TryHackMe" style="height: 24px; vertical-align: middle;">
+            </a>
+
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    </script>
+
+</body>
+</html>

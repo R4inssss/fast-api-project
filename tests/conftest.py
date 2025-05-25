@@ -111,3 +111,4 @@ def test_posts(test_user, session, test_user2):
 
     posts = session.query(models.Post).all()
     return posts
+
