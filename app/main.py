@@ -20,7 +20,10 @@ print(settings.database_username)
 # models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
-origins = ["*"]
+origins = ["https://www.r4ins.xyz",
+           "https://r4ins.xyz",
+           "https://www.r4ins.me",
+           "https://r4ins.me"]
 
 app.add_middleware(
     CORSMiddleware,
